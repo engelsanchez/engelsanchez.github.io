@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Bouncing Lines Demo</title>
+	<style>
+	body { 
+		margin:0; 
+		padding:0; 
+		background-color:#aaa;
+		font-family:verdana, sans-serif;
+		font-size:15px;
+	}
+	#main { 
+		margin:20px auto; 
+		border: 1px solid #333; 
+		width:400px; 
+		height:400px;
+		position:relative;
+		padding:0px;
+	}
+	#activebg{
+		top:0;
+		left:0;
+		z-index:-1;
+		width:100%;
+		height:100%;
+		position:absolute;
+		background-color:#fff;
+	}
+	#main-content{
+		position:relative;
+		padding:15px;
+	}
+	</style>
+</head>
+<body>
+	<div id="main">
+	<div id="activebg"></div>
+	<div id="main-content">
+		<h2>Bouncing Lines Demo</h2>
+		<p>This section should have a dynamic background consisting of 
+		<span id="lineCount">4</span>
+		dancing lines of different colors bouncing around.  Reloading the page will
+		randomly re-create the lines.  It might not look fancy to the people accustomed
+		to the hundred of Flash based web pages out there, but for the few of us who
+		don't think as Flash as a real part of the web, it is pretty cool.
+		</p>
+		<p>The Rapha&euml;l Javascript library makes it easy to create Vector Graphics
+		(lines, circles, shapes and the like) that work across different browsers.
+		Check it out! <a href="http://raphaeljs.com">http://raphaeljs.com</a>
+		</p>
+	</div>
+	</div>
+
+	<script type="text/javascript" src="../raphael.js"></script>
+	<script type="text/javascript" language="javascript">
+		window.onload = function (){
+			var limits = [400, 400];
+			var p = Raphael("activebg", limits[0], limits[1]);
+			var coords = [10, 200, 390, 200];
+			var deltas = [1, 1, -1, -1];
+			var numLines = 6;
+			document.getElementById("lineCount").innerHTML=""+numLines;
+			var numCoords = numLines * 4;
+			var randInt = function(minInt, maxInt){
+				var range = maxInt - minInt + 1;
+				return Math.floor((Math.random() * range)) + minInt;
+			};
+			for(var i=0;i<numCoords;++i){
+				coords[i] = randInt(0, limits[i%2]);
+				deltas[i] = randInt(-1,2);
+				if(deltas[i] <= 0)
+					deltas[i] -= 1;
+			}
+			var toPath = function(coords, ofs){
+				return "M"+coords[ofs]+","+coords[ofs+1]+"L"+coords[ofs+2]+","+coords[ofs+3];
+			};
+			var lines = [];
+			for(i=0;i<numLines;++i){
+				lines[i] = p.path(toPath(coords, i*4)).attr({stroke:"hsb("+Math.random()+",1,1)", "stroke-width":2, "stroke-linecap":"round"});
+			}
+			var lineUpdater = function(){
+				var i=0;
+				var myCoords = coords;
+				var numCoords = coords.length;
+				for(i=0;i<numCoords;++i){
+					coords[i] += deltas[i];
+					if(coords[i] < 0){
+						coords[i] = -coords[i];
+						deltas[i] = -deltas[i];
+					} else {
+						var maxValue = limits[i%2];
+						if(coords[i] >= maxValue){
+							coords[i] = 2 * maxValue - coords[i];
+							deltas[i] = -deltas[i];
+						}
+					}
+				}
+				for(i=0;i<lines.length;++i){
+					lines[i].attr("path", toPath(coords, i*4));
+				}
+			};
+			
+			setInterval(lineUpdater, 30);
+		}
+	</script>
+</body>
+</html>

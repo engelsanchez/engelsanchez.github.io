@@ -1,0 +1,39 @@
+Sections:
+ - Bio
+ - Projects (software, modeling, music, sound)
+ - Salsa (salsa bio, salsa links?)
+ - Chess (chess bio, chess links?)
+ - Music (Music bio, music links?)
+ - Learning (stuff I'm studying)
+ 
+ --- Bio ---
+ Resume
+ LinkedIn profile
+ Neighborhood
+ family
+ Languages, hobby list
+ Math
+ Khan academy?
+ --- Projects ---
+ Hunter
+ RowStreams
+ JS games
+ Unity game
+ My Blender tutorials
+ Raphael experiments
+ --- Salsa ---
+ 
+ --- Chess ---
+ 
+ --- Music ---
+Music bio
+links (how to play the piano...) 
+ --- Learning ---
+ Chemistry book
+ Khan academy mention
+ --- ??? ---
+ Trine
+ Zeno Clash
+ Caster3D
+ Aztaka
+ Canabalt
