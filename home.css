@@ -55,6 +55,7 @@ body {
   background-image:url('img/bodybgcenter.png');
   background-repeat:repeat-y;
   padding: 0px 55px;
+  min-height:800px;
 }
 
 #main-bottom{
@@ -134,7 +135,29 @@ a:hover{text-decoration:underline;}
 .book .review,  .book .review  *{font-size:12px;}
 
 h1{
-font-size:400%;
+	font-size:180%;
+	text-align:center;
 }
 
 h2{text-align:center;margin:15px 0 8px;font-size:150%;}
+
+#what-i-love{
+	position:relative;
+	height:200px;
+}
+
+.love-item{
+	font-weight:bold;
+	font-size:20px;
+	display:table;
+	position:absolute;
+	width:100px;
+	height:40px;
+	text-align:center;
+}
+
+.love-label{
+	display:table-cell;
+	vertical-align:middle;
+}
+
