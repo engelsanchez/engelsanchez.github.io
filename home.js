@@ -19,14 +19,26 @@ $(function(){
 	};
 	var clickHandler = function(name){
 		return function(){
-			if(!currentSection){
-				$("#"+name).fadeIn(200);
-				selectBtn(name);
-			} else if(currentSection != name){
+			if(currentSection && currentSection != name){
 				deselectBtn(currentSection);
-				$("#"+currentSection).fadeOut(200,	function(){ $("#"+name).fadeIn(200); });
-				selectBtn(name);
 			}
+
+			if(name == "reading"){
+				if(currentSection)
+					$("#"+currentSection).fadeOut(200);
+				$.get("reading.html", 
+					function(data){
+						$("#"+name).html(data).fadeIn(200);
+					}, 
+					function(){alert("Failed to fetch section "+name);});
+			} else {
+				if(currentSection)
+					$("#"+currentSection).fadeOut(200,	function(){ $("#"+name).fadeIn(200); });
+				else
+					$("#"+name).fadeIn(200);
+			}
+
+			selectBtn(name);
 			currentSection = name;
 			window.location.hash = name;
 		}
@@ -57,8 +69,8 @@ $(function(){
 	homebg.circle(0, 0, 50).attr({"stroke":"#bbf", "stroke-width":2});
 
 	// Initial placement for love items
-	var center = { x: 329, y: 100 };
-	var r = {x:200, y:60 };
+	var center = { x: 329, y: 80 };
+	var r = {x:240, y:60 };
 	var yfactor = r.y / (1.0 * r.x);
 	var loveItems = $(".love-item");
 	var nLoveItems = loveItems.length;
@@ -69,14 +81,14 @@ $(function(){
 	var updateFn = function(){
 		var angle = initAngle;
 		loveItems.each(function(){
-			var x = center.x + Math.sin(Math.PI * angle / 180) * r.x - lx;
+			var x = center.x - Math.sin(Math.PI * angle / 180) * r.x - lx;
 			var y = center.y + yfactor * ( Math.cos(Math.PI * angle / 180) * r.x ) - ly;
 			angle += angleStep;
 			$(this).css({top: y + "px", left: x + "px" });
 		});
 		initAngle += .2;
-		initAngle = initAngle % 360;
-		setTimeout(updateFn, 80);
+		initAngle = (initAngle+360) % 360;  // watch out, I think this converts to int first
+		setTimeout(updateFn, 400);
 	};
 	
 	updateFn();

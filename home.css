@@ -8,7 +8,7 @@
 p {margin-top:0;}
 
 div.p{
-	margin:8px 0;
+	margin:18px 0;
 	text-indent: 1em;
 }
 
@@ -30,7 +30,9 @@ div.p{
 body {
   margin:0;
   padding:0;
+  
   background-image: url('img/mainbggradient.png');
+  
   background-repeat: repeat-x;
   background-attachment: fixed;
   background-color: #D8DFF0;
@@ -143,11 +145,17 @@ h2{text-align:center;margin:15px 0 8px;font-size:150%;}
 
 #what-i-love{
 	position:relative;
-	height:200px;
+	height:160px;
+}
+
+#love-french{
+/*	background-image:url('img/french.png'); */
 }
 
 .love-item{
 	font-weight:bold;
+	color:black;
+	text-shadow: 0px 0px 4px white,0px 0px 4px white,0px 0px 4px white;
 	font-size:20px;
 	display:table;
 	position:absolute;
