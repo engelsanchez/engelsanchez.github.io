@@ -5,11 +5,16 @@
 	font-size: 14px;
 }
 
-p {margin-top:0;}
+p {
+	margin-top:0;
+}
 
 div.p{
 	margin:18px 0;
+	padding:15px;
 	text-indent: 1em;
+	background-color:#fdfdff;
+	border-radius:20px;
 }
 
 .section {
@@ -56,7 +61,7 @@ body {
 #main-content{
   background-image:url('img/bodybgcenter.png');
   background-repeat:repeat-y;
-  padding: 0px 55px;
+  padding: 0px 25px;
   min-height:800px;
 }
 
@@ -146,6 +151,9 @@ h2{text-align:center;margin:15px 0 8px;font-size:150%;}
 #what-i-love{
 	position:relative;
 	height:160px;
+	background-color:white;
+	border:1px solid #ddddff;
+	border-radius:25px;
 }
 
 #love-french{
@@ -155,7 +163,7 @@ h2{text-align:center;margin:15px 0 8px;font-size:150%;}
 .love-item{
 	font-weight:bold;
 	color:black;
-	text-shadow: 0px 0px 4px white,0px 0px 4px white,0px 0px 4px white;
+	text-shadow: 0px 0px 4px #ff7,0px 0px 4px #ff7,0px 0px 4px #ff7;
 	font-size:20px;
 	display:table;
 	position:absolute;
