@@ -1,6 +1,7 @@
 $(function(){
+	var remoteSections = { reading:1,resume:1};
 	var sections = [];
-	var requestSection = window.location.hash;
+	var requestSection = window.location.hash.replace(/_/,"");
 	var currentIdx = 0;
 	$("div.section").each(function(){
 		if("#"+this.id == requestSection){
@@ -23,10 +24,10 @@ $(function(){
 				deselectBtn(currentSection);
 			}
 
-			if(name == "reading"){
+			if(remoteSections[name]){
 				if(currentSection)
 					$("#"+currentSection).fadeOut(200);
-				$.get("reading.html", 
+				$.get(name+".html", 
 					function(data){
 						$("#"+name).html(data).fadeIn(200);
 					}, 
@@ -40,7 +41,7 @@ $(function(){
 
 			selectBtn(name);
 			currentSection = name;
-			window.location.hash = name;
+			window.location.hash = "_"+name;
 		}
 	}
 	var inHandler = function(name){
@@ -57,7 +58,7 @@ $(function(){
 			}
 		}
 	}
-	for(var i =0;i<sections.length;++i){
+	for(var i=0;i<sections.length;++i){
 		var btn = sections[i];
 		var btnId = "#"+btn+"-btn";
 		$(btnId).click(clickHandler(btn)).mouseenter(inHandler(btn)).mouseleave(outHandler(btn));
@@ -65,8 +66,8 @@ $(function(){
 			$(btnId).click();
 		
 	}
-	var homebg = Raphael("homebg", 400, 400);
-	homebg.circle(0, 0, 50).attr({"stroke":"#bbf", "stroke-width":2});
+//	var homebg = Raphael("homebg", 400, 400);
+//	homebg.circle(0, 0, 50).attr({"stroke":"#bbf", "stroke-width":2});
 
 	// Initial placement for love items
 	var center = { x: 329, y: 80 };

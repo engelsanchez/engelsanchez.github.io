@@ -8,15 +8,53 @@
 p {
 	margin-top:0;
 }
-
-div.p{
-	margin:18px 0;
-	padding:15px;
-	text-indent: 1em;
-	background-color:#fdfdff;
-	border-radius:20px;
+div.prof-right{
+	margin:0 3px;
+	float:right;
 }
 
+div.prof-left{
+	margin:0 3px;
+	float:left;
+}
+
+div.project-links * {font-size:12px}
+div.project-links span.link-heading{font-weight:bold}
+div.project-links {clear:both}
+div.project-pic {
+	float:left;
+	padding:6px 12px 6px 6px;
+}
+div.project-pic img {width:100px}
+
+div.project-title, div.project-title a{
+	font-weight:bold;
+	font-size:20px;
+}
+div.p, div.project{
+	margin:18px 0;
+	padding:15px;
+	background-color:#fdfdff;
+	/*border-radius:20px;*/
+	line-height:2em	;
+	border-top:1px dashed  #444;
+	border-bottom:1px dashed  #444;
+}
+div.p { text-index:1em}
+
+div.p:first-child, div.project:first-child{margin-top:0px}
+
+div.project-body{
+	text-indent:0em;
+}
+/*div.project{
+	margin:18px 0;
+	padding:15px;
+	background-color:#fdfdff;
+	border-radius:20px;
+	line-height:2em	;
+	border:1px solid #44f;
+}*/
 .section {
   position:relative;
   overflow:hidden;
@@ -41,6 +79,14 @@ body {
   background-repeat: repeat-x;
   background-attachment: fixed;
   background-color: #D8DFF0;
+}
+
+#title{
+	width:700px;
+	height:48px;
+	padding:8px 34px 0 34px;
+	background-image:url('img/bodybg.png');
+	background-repeat:no-repeat;
 }
 
 #main{
@@ -117,6 +163,13 @@ z-index:-1;
 div.book{
 	margin:0 0 20px 0;
 	clear:both;
+	padding:15px;
+	background-color:#fdfdff;
+/*	border-radius:20px; */
+	line-height:2em	;
+	min-height:130px;
+	border-top:1px dashed  #444;
+	border-bottom:1px dashed  #444;
 }
 
 .book .author{
@@ -142,8 +195,15 @@ a:hover{text-decoration:underline;}
 .book .review,  .book .review  *{font-size:12px;}
 
 h1{
-	font-size:180%;
+	font-size:220%;
 	text-align:center;
+	margin-top:0;
+	padding-top:0;
+	font-family:"Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	/*border-radius:15px;
+	border:1px solid #44f;
+	background-color:#F2F2F2;*/
+	font-style:italic;
 }
 
 h2{text-align:center;margin:15px 0 8px;font-size:150%;}
@@ -152,8 +212,8 @@ h2{text-align:center;margin:15px 0 8px;font-size:150%;}
 	position:relative;
 	height:160px;
 	background-color:white;
-	border:1px solid #ddddff;
 	border-radius:25px;
+	border:1px solid #44f;
 }
 
 #love-french{
@@ -163,7 +223,7 @@ h2{text-align:center;margin:15px 0 8px;font-size:150%;}
 .love-item{
 	font-weight:bold;
 	color:black;
-	text-shadow: 0px 0px 4px #ff7,0px 0px 4px #ff7,0px 0px 4px #ff7;
+	text-shadow: 0px 0px 1px #E4FDFF;
 	font-size:20px;
 	display:table;
 	position:absolute;
