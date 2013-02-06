@@ -1,0 +1,43 @@
+body {
+margin:0; padding:0
+}
+* {
+font-family:Arial, sans-serif;
+}
+
+a {
+color:#d42;
+text-decoration:none;
+}
+
+a:hover {
+text-decoration:underline;
+}
+
+.p {
+margin:15px 5px;
+text-indent:1em;
+}
+
+#body {
+width:800px;
+margin:15px auto;
+}
+h2 {
+font-family:georgia,Arial,serif;
+border-bottom:1px solid #666;
+padding-bottom:4px;
+}
+#header {
+font-family:georgia,Arial,serif;
+background-color:black;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+.header-title{
+font-size:40px;
+}
+.header-subtitle{
+}
