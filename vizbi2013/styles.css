@@ -1,5 +1,6 @@
 body {
-margin:0; padding:0
+margin:0; padding:0;
+background-image:url(paper_fibers.png);
 }
 * {
 font-family:Arial, sans-serif;
@@ -35,6 +36,7 @@ background-color:black;
 color:white;
 text-align:center;
 padding:15px;
+box-shadow: 0px 4px 5px #888888;
 }
 
 .header-title{
