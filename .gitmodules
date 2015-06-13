@@ -1,0 +1,3 @@
+[submodule "interval-flasher"]
+	path = interval-flasher
+	url = https://github.com/engelsanchez/interval-flasher.git
