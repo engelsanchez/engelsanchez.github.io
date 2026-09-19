@@ -1,0 +1,43 @@
+# Site settings
+title: Engel Sanchez
+tagline: Software engineer
+description: >-
+  Personal home page of Engel Sanchez — writing about software,
+  distributed systems, and whatever else is holding my attention.
+url: "https://www.engelsanchez.net"
+baseurl: ""
+
+# Shown next to the bio on the home page
+author:
+  name: Engel Sanchez
+  photo: /assets/images/portrait.jpg
+  photo_alt: "Portrait of Engel Sanchez"
+  email: engel.sanchez@gmail.com
+  github: engelsanchez
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - CLAUDE.md

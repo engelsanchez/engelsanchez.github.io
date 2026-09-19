@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <p>
+    &copy; {{ 'now' | date: "%Y" }} {{ site.author.name | default: site.title }}
+    {%- if site.author.github %}
+    &middot; <a href="https://github.com/{{ site.author.github }}">GitHub</a>
+    {%- endif %}
+    {%- if site.author.email %}
+    &middot; <a href="mailto:{{ site.author.email }}">Email</a>
+    {%- endif %}
+    &middot; <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+  </p>
+</footer>
