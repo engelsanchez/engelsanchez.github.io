@@ -10,8 +10,8 @@ baseurl: ""
 # Shown next to the bio on the home page
 author:
   name: Engel Sanchez
-  photo: /assets/images/portrait.jpg
-  photo_alt: "Portrait of Engel Sanchez"
+  photo: /assets/images/EngelHoldingMando.svg
+  photo_alt: "Illustration of Engel Sanchez holding Mando"
   email: engel.sanchez@gmail.com
   github: engelsanchez
 

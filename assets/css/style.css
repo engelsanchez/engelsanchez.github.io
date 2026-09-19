@@ -59,12 +59,11 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: start;
 }
 
+/* The artwork is a transparent SVG, so no background or rounding here --
+   the page background shows straight through it. */
 .intro-photo img {
   width: 100%;
-  border-radius: 10px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  background: var(--surface);
+  height: auto;
 }
 
 .intro-name {

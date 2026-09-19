@@ -10,7 +10,7 @@ Personal site, built with Jekyll and served by GitHub Pages at
 | `index.md`             | The bio paragraph on the home page                  |
 | `_config.yml`          | Site title, tagline, portrait path, links           |
 | `_posts/`              | Blog entries, named `YYYY-MM-DD-slug.md`            |
-| `assets/images/`       | Images, including `portrait.jpg` for the home page  |
+| `assets/images/`       | Images, including `EngelHoldingMando.svg` for the home page |
 | `assets/css/style.css` | All the styling                                     |
 | `_layouts/`            | `home` (photo + bio + post list), `post`, `default` |
 
