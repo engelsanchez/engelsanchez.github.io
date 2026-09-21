@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+<header class="intro-header">
+  <h1 class="intro-name">{{ page.heading | default: site.author.name }}</h1>
+  {%- if site.tagline %}<p class="intro-tagline">{{ site.tagline }}</p>{%- endif %}
+</header>
+
 <section class="intro">
   <div class="intro-photo">
     <img
@@ -10,8 +15,6 @@ layout: default
   </div>
 
   <div class="intro-bio">
-    <h1 class="intro-name">{{ page.heading | default: site.author.name }}</h1>
-    {%- if site.tagline %}<p class="intro-tagline">{{ site.tagline }}</p>{%- endif %}
     {{ content }}
   </div>
 </section>

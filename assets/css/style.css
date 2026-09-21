@@ -50,7 +50,13 @@ img { max-width: 100%; height: auto; display: block; }
   padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 5vw, 2rem);
 }
 
-/* ---------- Intro: photo + bio ---------- */
+/* ---------- Intro: heading, then photo + bio ---------- */
+/* The name and tagline sit above everything at every width. */
+.intro-header {
+  margin-bottom: var(--gap);
+  text-align: center;
+}
+
 /* Mobile first: photo on top, bio underneath. */
 .intro {
   display: grid;
@@ -74,11 +80,12 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .intro-tagline {
-  margin: 0.35rem 0 1.25rem;
+  margin: 0.35rem 0 0;
   color: var(--muted);
   font-size: 1.05rem;
 }
 
+.intro-bio > :first-child { margin-top: 0; }
 .intro-bio p { margin: 0 0 1rem; }
 .intro-bio p:last-child { margin-bottom: 0; }
 
